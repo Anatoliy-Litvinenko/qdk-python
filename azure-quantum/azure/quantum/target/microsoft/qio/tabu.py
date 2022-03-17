@@ -59,6 +59,12 @@ class Tabu(Solver):
             output_data_format="microsoft.qio-results.v2",
             **kwargs
         )
+        
+        def supports_grouped_terms(self):
+            return True
+        
+        def supports_protobuf(self):
+            return True
 
         self.set_one_param("sweeps", sweeps)
         self.set_one_param("tabu_tenure", tabu_tenure)
